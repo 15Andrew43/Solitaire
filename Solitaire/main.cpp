@@ -29,9 +29,10 @@ bool Convergence(Position& position) {
 //    }
 
     for (const auto& move: possible_moves) {
-//        if (Convergence(position.DoMove(move))) {
-//            return true;
-//        }
+        if (Convergence(position.DoMove(move))) {
+            position.GoBackToPrevMove();
+            return true;
+        }
     }
     return false;
 }

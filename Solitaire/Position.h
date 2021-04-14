@@ -43,6 +43,7 @@ public:
     uint32_t GetOpenSepInd() const;
     uint32_t Size() const;
     void PopBack();
+    void PushBack(const Card& card);
 
 private:
     std::vector<Card> cards_;
@@ -51,12 +52,13 @@ private:
 
 class Position {
 public:
+    Position(uint16_t cnt_column, uint16_t cnt_decks);
     std::vector<Move> GetPossibleMoves();
     static void MakeEvristic(const std::vector<Move>& moves);
     Position& DoMove(const Move& move);
     void GoBackToPrevMove();
-    Position(uint16_t cnt_column, uint16_t cnt_decks);
     bool Win() const;
+    bool Strike();
 
 private:
     static std::vector<Move> GetPossibleMoves(const std::vector<Column>& columns);

@@ -37,6 +37,7 @@ Position::Position(uint16_t cnt_column, uint16_t cnt_decks) {
 
 std::vector<Move> Position::GetPossibleMoves(const std::vector<Column>& columns) {
     std::vector<Move> moves;
+    std::vector<Card> move_cards;
     for (uint32_t i = 0; i < columns.size(); ++i) {
         for (uint32_t j = 0; j < columns.size(); ++j) {
             if (i == j) {
@@ -45,9 +46,8 @@ std::vector<Move> Position::GetPossibleMoves(const std::vector<Column>& columns)
             auto sep1 = columns[i].GetOpenSepInd();
             auto sep2 = columns[j].GetOpenSepInd();
             if (columns[i][sep1].face_value_ == columns[j][sep2].face_value_ + 1) {
-                std::vector<Card> move_cards;
                 move_cards.clear();
-                for (uint32_t k = sep1; k < columns[i].Size(); ++i) {
+                for (uint32_t k = sep1; k < columns[i].Size(); ++k) {
                     move_cards.push_back(columns[i][k]);
                 }
                 moves.emplace_back(move_cards, i, j);
@@ -79,11 +79,24 @@ Position& Position::DoMove(const Move& move) {
     auto column_from = move.column_from_;
     auto column_to = move.column_to_;
     std::vector<Card> move_cards = move.cards_;
-//    for (uint32_t i = 0; i < move_cards.size(); ++i) {
-//        columns_[column_from].PopBack();
-//    }
-
+    for (uint32_t i = 0; i < move_cards.size(); ++i) {
+        columns_[column_from].PopBack();
+    }
+    for (uint32_t i = 0; i < move_cards.size(); ++i) {
+        columns_[column_to].PushBack(move_cards[i]);
+    }
+    moves_.push(move);
+    Strike();
     return *this;
+}
+
+void Position::GoBackToPrevMove() {
+    // go to the previous step( in order not to copy a lot)
+}
+
+bool Position::Strike() {
+    // if right position - delete cards.
+    return false;
 }
 
 
@@ -114,6 +127,12 @@ uint32_t Column::Size() const {
 void Column::PopBack() {
     cards_.pop_back();
 }
+
+void Column::PushBack(const Card& card) {
+    cards_.push_back(card);
+}
+
+
 
 Move::Move(const std::vector<Card> &cards, uint32_t column_from, uint32_t column_to)
     : cards_(cards), column_from_(column_from), column_to_(column_to) {
