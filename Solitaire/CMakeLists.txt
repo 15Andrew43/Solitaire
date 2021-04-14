@@ -3,4 +3,4 @@ project(Solitaire)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Solitaire main.cpp)
+add_executable(Solitaire main.cpp Position.cpp Position.h)

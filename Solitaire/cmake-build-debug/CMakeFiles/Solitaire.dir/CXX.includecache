@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/Position.h
+utility
+-
+vector
+-
+stack
+-
+
 /Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/main.cpp
 iostream
 -
+Position.h
+/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/Position.h
 

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/Position.cpp" "/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/cmake-build-debug/CMakeFiles/Solitaire.dir/Position.cpp.o"
   "/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/main.cpp" "/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/cmake-build-debug/CMakeFiles/Solitaire.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

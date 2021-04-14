@@ -143,6 +143,33 @@ Solitaire/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solitaire.dir/build.make CMakeFiles/Solitaire.dir/build
 .PHONY : Solitaire/fast
 
+Position.o: Position.cpp.o
+
+.PHONY : Position.o
+
+# target to build an object file
+Position.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solitaire.dir/build.make CMakeFiles/Solitaire.dir/Position.cpp.o
+.PHONY : Position.cpp.o
+
+Position.i: Position.cpp.i
+
+.PHONY : Position.i
+
+# target to preprocess a source file
+Position.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solitaire.dir/build.make CMakeFiles/Solitaire.dir/Position.cpp.i
+.PHONY : Position.cpp.i
+
+Position.s: Position.cpp.s
+
+.PHONY : Position.s
+
+# target to generate assembly for a file
+Position.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solitaire.dir/build.make CMakeFiles/Solitaire.dir/Position.cpp.s
+.PHONY : Position.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Solitaire"
+	@echo "... Position.o"
+	@echo "... Position.i"
+	@echo "... Position.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

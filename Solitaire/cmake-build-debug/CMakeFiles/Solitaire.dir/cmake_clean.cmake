@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Solitaire.dir/Position.cpp.o"
   "CMakeFiles/Solitaire.dir/main.cpp.o"
   "Solitaire"
   "Solitaire.pdb"

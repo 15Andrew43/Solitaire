@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/Position.cpp">
+			<Option target="Solitaire"/>
+		</Unit>
+		<Unit filename="/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/Position.h">
+			<Option target="Solitaire"/>
+		</Unit>
 		<Unit filename="/Users/andrew_borovets/Desktop/KIS/Solitaire/Solitaire/main.cpp">
 			<Option target="Solitaire"/>
 		</Unit>
